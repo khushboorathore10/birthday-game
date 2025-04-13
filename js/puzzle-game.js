@@ -15,7 +15,12 @@ image.src = referenceImage.src;
 
 let resizedImage = new Image();
 
+
 image.onload = () => {
+  debugger;
+  const loader = document.getElementById("loader");
+  const referenceImage = document.getElementById("referenceImage");
+
   // Resize original image to 225x225 using an offscreen canvas
   const resizeCanvas = document.createElement("canvas");
   resizeCanvas.width = targetSize;
@@ -26,17 +31,24 @@ image.onload = () => {
   resizedImage.src = resizeCanvas.toDataURL();
 
   resizedImage.onload = () => {
-    // Set the display sizes of reference and grid
+    const loader = document.getElementById("loader");
+    const referenceImage = document.getElementById("referenceImage");
+  
     referenceImage.style.width = targetSize + "px";
     referenceImage.style.height = targetSize + "px";
-
     puzzleGrid.style.width = targetSize + "px";
     puzzleGrid.style.height = targetSize + "px";
-
+  
+    loader.style.display = "none";                // Hide loader
+    referenceImage.style.opacity = 1;             // Show image
+    referenceImage.style.transition = "opacity 0.5s ease-in"; // Smooth fade
+  
     createGrid();
     generatePieces();
   };
+  
 };
+
 
 // Create the grid cells
 function createGrid() {
