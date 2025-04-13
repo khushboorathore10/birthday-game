@@ -208,8 +208,9 @@ function checkIfSolved() {
           text-align: center;
           box-shadow: 0 4px 16px rgba(0,0,0,0.3);
         ">
-          <h2>🎉 You solved it! Well done!</h2>
-          <button onclick="startGame('platformer')" style="
+          <h2 style="color: #fd2032;">Yayy... you got it!</h2>
+          <h2>🎉 🎉 🎉</h2>
+          <button onclick="startGame('adventure')" style="
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 1rem;
