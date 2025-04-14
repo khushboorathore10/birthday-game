@@ -17,7 +17,6 @@ let resizedImage = new Image();
 
 
 image.onload = () => {
-  debugger;
   const loader = document.getElementById("loader");
   const referenceImage = document.getElementById("referenceImage");
 
